@@ -3,7 +3,7 @@ import time
 from scipy.spatial import distance_matrix
 
 # For 2D circle
-N = 100000000
+N = 500000
 count = 0
 # Generate random points and origin point
 t = time.time()
