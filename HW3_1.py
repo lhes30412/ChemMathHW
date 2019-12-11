@@ -31,7 +31,7 @@ def scf(_method, _a, _g):
                 break
             else:
                 P_old = P_new  # 把 P_old 直接用 P_new 覆蓋，準備進入下一圈
-        return i, err  # 把 圈數 和 err 丟出來
+        return i+1, err  # 把 圈數 和 err 丟出來
 
     # For damping method
     elif _method == 'Damping Method':
@@ -44,7 +44,7 @@ def scf(_method, _a, _g):
                 break
             else:
                 P_old = P_new  # 把 P_old 直接用 P_new 覆蓋，準備進入下一圈
-        return i, err  # 把 圈數 和 err 丟出來
+        return i+1, err  # 把 圈數 和 err 丟出來
 
 
 # Initial parameter
