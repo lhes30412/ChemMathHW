@@ -115,6 +115,9 @@ total = np.sum(total, axis=0)
 normal_mode /= np.sqrt(total)
 
 # Start the plot
+# First, plot frequency 3803 cm-1
+plt.figure()
+
 ax = plt.gca(projection='3d')
 
 x = xyz[:, 0]  # N 個原子的 x 座標
@@ -133,8 +136,57 @@ ax.view_init(90, 90)  # 選擇xy平面
 mode1 = normal_mode[:, -2].reshape(-1, 3)
 u = mode1[:, 0]
 v = mode1[:, 1]
-w = mode1[:, 2]
+w_ = mode1[:, 2]
 
-ax.quiver3D(x, y, z, u, v, w, color='red', arrow_length_ratio=0.5)
+ax.quiver3D(x, y, z, u, v, w_, color='red', arrow_length_ratio=0.5)
 
 plt.show()
+
+# Frequency at 3937 cm-1
+plt.figure()
+
+ax = plt.gca(projection='3d')
+
+ax.scatter3D(x, y, z)
+
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+ax.view_init(90, 90)  # 選擇xy平面
+# ax.view_init(90,  0)  # 選擇xz平面
+# ax.view_init(0,  0)  # 選擇yz平面
+
+mode1 = normal_mode[:, -1].reshape(-1, 3)
+u = mode1[:, 0]
+v = mode1[:, 1]
+w_ = mode1[:, 2]
+
+ax.quiver3D(x, y, z, u, v, w_, color='red', arrow_length_ratio=0.5)
+
+plt.show()
+
+# Frequency at 1622 cm-1
+plt.figure()
+ax = plt.gca(projection='3d')
+
+ax.scatter3D(x, y, z)
+
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+ax.view_init(90, 90)  # 選擇xy平面
+# ax.view_init(90,  0)  # 選擇xz平面
+# ax.view_init(0,  0)  # 選擇yz平面
+
+mode1 = normal_mode[:, -3].reshape(-1, 3)
+u = mode1[:, 0]
+v = mode1[:, 1]
+w_ = mode1[:, 2]
+
+ax.quiver3D(x, y, z, u, v, w_, color='red', arrow_length_ratio=0.5)
+
+plt.show()
+
+print('Work done!! Happy New Year!!')
